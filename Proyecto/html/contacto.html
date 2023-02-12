@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link rel="stylesheet" href="../CSS/estilos2.css">
+	<link rel="icon" href="../IMG/icon.jpg">
+	<style type="text/css">
+		
+	
+	body,td,th {
+    font-family: "Open Sans", sans-serif;
+}
+    </style>
+<title>REGISTRO</title>
+</head>
+<body>
+	<script src="../JS/script5_1.js"></script>
+	<script src="../JS/script4_1.js"></script>
+	<div class="head">
+		  <table width="100%" border="0">
+		    <tbody>
+		      <tr>
+		        <!--td width="19%" align="center" valign="middle"><p>&nbsp;</p-->
+	            <!--p><img src="../IMG/icon.jpg" width="143" height="96" alt=""/></p></td-->
+		        <td width="23%" align="center" valign="middle"><h1>&nbsp;</h1>
+				<h3>     <img src="../IMG/usuario.png" width="50" height="50" alt=""/> Administrador</h3>
+	            </td>
+		        <td width="50%" align="center" valign="middle"><h3>&nbsp;</h3>
+					 <h3>Sistema de Registro de Clientes</h3>
+	            </td>
+				  <!--script src="JS/popup.js"></script-->
+		        <td width="27%" align="left" valign="middle" id="usuario"><h3>&nbsp;</h3>
+					<h3>FECHA: <a id="demo"></a></h3>
+	            <p>&nbsp;</p>
+				<a  href="../index.html"><button type="button" class="formulario__btn">CERRAR SESIÓN</button></a></td>
+	          </tr>
+	        </tbody>
+	      </table>
+		  <h6>&nbsp;</h6>
+	</div>
+<div class="contenedor">
+		<article>
+			<div class="navbar">
+			  <a href="inicio.html">REGISTRO </a>
+				<a id="buscar" href="buscar.html">BÚSQUEDA</a>
+				<a href="contacto.html">PLANES</a>
+				<a id="buscar2" href="buscar2.html">FACTURACION</a>
+				</div> 
+		</article>
+	</div>
+<div class="formulario__grupo formulario__grupo-btn-enviar">
+	<button type="submit" class="formulario__btn" value="Cargar Datos" onClick="cargarDatos()">CARGAR DATOS</button>
+</div>
+	<script src="../JS/popup.js"></script>
+	<br>
+
+<div class="contenido" align="center">
+		<table width="90%" border="0" align="right" id="tablaDeDatos" valign="middle" bgcolor="#FFFFFF">
+		  	<tbody >
+				<tr>
+				  <td width="14%" align="left" ><h4>CÓDIGO</h4></td>
+				  <td width="16%" align="left" ><h4>SERVICIO</h4></td>
+				  <td width="16%" align="left" ><h4>TIPO DE PLAN</h4></td>
+				  <td width="16%" align="left" ><h4>PRECIO</h4></td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>
+	
+</body>
+
+</html>

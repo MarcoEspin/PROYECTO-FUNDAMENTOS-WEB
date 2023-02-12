@@ -1,37 +1,41 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>INNOVA TECH</title>
-	<link href="css/estiloLogin.css" rel="stylesheet">
-	<link rel="shortcut icon" href="img/icono.PNG">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+	<link rel="icon" href="IMG/icon.png">
+    <style type="text/css">
+    body,td,th {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: #FFFFFF;
+    background-image: url(IMG/fondo1.jpg);
+}
+    </style>
 </head>
-
 <body>
-	 <div class="modal-dialog text-center">
-        <div class="col-sm-8 main-section">
-            <div class="modal-content">
-                <div class="col-12 user-img"><img src="img/iconoUsuario.png" th:src="@{/img/iconoUsuario.png}"/></div>
-                <form class="col-12" th:action="@{/login}" method="get">
-                    <div class="form-group" id="user-group">
-                      <input type="text" class="form-control" placeholder="Nombre de usuario" name="username"/>
-                    </div>
-                    <div class="form-group" id="contrasena-group">
-                        <input type="password" class="form-control" placeholder="Contrasena" name="password"/>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>Ingresar</button>
-                </form>
-                <div class="col-12 forgot">
-                    <a href="#">Recordar contrasena?</a>
-                </div>
-                <div th:if="${param.error}" class="alert alert-danger" role="alert">
-		            Invalid username and password.
-		        </div>
-		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
-		            You have been logged out.
-		        </div>
+    <form action="" method="POST" id="form">
+        <div class="form">
+          <h1>¡BIENVENIDO!</h1>
+		  <h3>Ingrese sus credenciales</h3>
+          <div class="grupo">
+                <input type="text" name="" id="user" ><span class="barra"></span>
+                <label for=""><h2>Usuario</h2></label>
             </div>
+            <div class="grupo">
+                <input type="password" name="" id="password" ><span class="barra"></span>
+                <label for=""><h2>Contraseña</h2></label>
+            </div>
+			
+		
+			<button type="reset">Resetear</button>
+			<button type="submit">Enviar</button>
+            <p class="warnings" id="warnings"></p>
         </div>
-    </div>
+    </form>
+	<script src="JS/script1.js"></script>
 </body>
 </html>

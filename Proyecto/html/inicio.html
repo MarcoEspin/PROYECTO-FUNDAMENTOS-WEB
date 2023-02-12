@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link rel="stylesheet" href="../CSS/estilos2.css">
+	<link rel="icon" href="../IMG/icon.jpg">
+	<style type="text/css">
+	<script src="../JS/script3.js"></script>
+		
+	
+		
+	
+	body,td,th {
+    font-family: "Open Sans", sans-serif;
+}
+    </style>
+<title>REGISTRO</title>
+</head>
+<body>
+	<script src="../JS/script5.js"></script>
+	<script src="../JS/script4.js"></script>
+	<div class="head">
+		  <table width="100%" border="0">
+		    <tbody>
+		      <tr>
+		        <!--td width="19%" align="center" valign="middle"><p>&nbsp;</p-->
+	            <!--p><img src="../IMG/icon.jpg" width="143" height="96" alt=""/></p></td-->
+		        <td width="23%" align="center" valign="middle"><h1>&nbsp;</h1>
+				<h3>     <img src="../IMG/usuario.png" width="50" height="50" alt=""/> Administrador</h3>
+	            </td>
+		        <td width="50%" align="center" valign="middle"><h3>&nbsp;</h3>
+					 <h3>Sistema de Registro de Clientes</h3>
+	            </td>
+				  <!--script src="JS/popup.js"></script-->
+		        <td width="27%" align="left" valign="middle" id="usuario"><h3>&nbsp;</h3>
+					<h3>FECHA: <a id="demo"></a></h3>
+	            <p>&nbsp;</p>
+				<a  href="../index.html"><button type="button" class="formulario__btn">CERRAR SESIÓN</button></a></td>
+	          </tr>
+	        </tbody>
+	      </table>
+		  <h6>&nbsp;</h6>
+	</div>
+<div class="contenedor">
+		<article>
+			<div class="navbar">
+			  <a href="inicio.html">REGISTRO </a>
+				<a id="buscar" href="buscar.html">BÚSQUEDA</a>
+				<a href="contacto.html">PLANES</a>
+				<a id="buscar2" href="buscar2.html">FACTURACION</a>
+				</div> 
+			<div class="alt"><p></p></div>
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+			  <div class="dropdown">
+			  <button class="dropbtn" onclick="myFunction()">REGISTRO
+				<i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-content" id="myDropdown">
+				<a class="btn-abrir-popup" id="btn-abrir-popup">NUEVO</a>
+				<a id="descargar" onClick="tableToCSV()">DESCARGAR</a>
+			  </div>
+			  </div>
+				
+			</div>
+		</article>
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times" ></i></a>
+			  <h1>REGISTRAR</h1>
+				<h4>Ingresar datos del cliente.</h4>
+				
+				<main>
+					<form action="" class="formulario" id="formulario">
+						<!-- Grupo: Nombre -->
+							<div class="formulario__grupo" id="grupo__nombreU" >
+								<label for="nombreU" class="formulario__label"><h2>NOMBRE:</h2></label>
+								<div class="formulario__grupo-input">
+									<input name="nombreU" type="text" required="required" class="formulario__input" id="nombreU" placeholder="Nombre del cliente">
+									<i class="formulario__validacion-estado fas fa-times-circle"></i>
+								</div>
+								<p class="formulario__input-error">Los nombres solo pueden contener caractéres alfabéticos.</p>
+							</div>
+						<!-- Grupo: Apellido -->
+						<div class="formulario__grupo" id="grupo__nombreR">
+							<label for="nombreR" class="formulario__label"><h2>APELLIDO:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="nombreR" type="text" required="required" class="formulario__input" id="nombreR" placeholder="Apellido del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">Los apellidos solo pueden contener caractéres alfabéticos.</p>
+						</div>
+						<!-- Grupo: Usuario -->
+						<div class="formulario__grupo" id="grupo__usuarioR">
+							<label for="usuarioR" class="formulario__label">
+							<h2>DIRECCIÓN:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="usuarioR" type="text" required="required" class="formulario__input" id="usuarioR" placeholder="Dirección del domicilio">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">Ingrese bien la dirección.</p>
+						</div>
+						<!-- Grupo: Contraseña -->
+						<div class="formulario__grupo" id="grupo__password">
+							<label for="password" class="formulario__label">
+							<h2>CELULAR:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="password" type="txt" required="required" class="formulario__input" id="password" placeholder="Celular del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El número celular debe tener 10 dígitos, incluido el 0</p>
+						</div>
+						<!-- Grupo: Correo -->
+						<div class="formulario__grupo" id="grupo__correo">
+							<label for="correo" class="formulario__label"><h2>CORREO:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="correo" type="text" required="required" class="formulario__input" id="correo" placeholder="Correo del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El correo tiene que ser valido</p>
+						</div>
+						<!-- Grupo: Cédula -->
+						<div class="formulario__grupo" id="grupo__cedulaR">
+							<label for="cedulaR" class="formulario__label"><h2>CÉDULA:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="cedulaR" type="number" required="required" class="formulario__input" id="cedulaR" placeholder="Cédula del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El número de cédula tiene que ser de 10 dígitos numéricos y tiene que ser un número de cédula real.</p>
+						</div>
+						
+						<!--plan de internet-->
+						<div class="formulario__grupo" id="grupo__plan">
+							<label for="plan" class="formulario__label"><h2>Plan de internet:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select" id="select">
+								<option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+						</div>
+						
+						<!--plan telefonía-->
+					  <div class="formulario__grupo" id="grupo__plan2">
+							<label for="plan" class="formulario__label"><h2>Plan de telefonía:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select2" id="select2">
+								<option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+					  </div>
+						
+						<!--plan de tv-->
+						<div class="formulario__grupo" id="grupo__plan3">
+							<label for="plan" class="formulario__label"><h2>Plan de TV satélital:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select3" id="select3">
+							<option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+						</div>
+						
+					  <!-- Grupo: Terminos y Condiciones -->
+					  <div class="formulario__grupo formulario__grupo-btn-enviar">
+						  <button type="submit" class="formulario__btn">Enviar</button>
+							<p class="formulario__mensaje-exito" id="formulario__mensaje-exito"></p>
+					  </div>
+						
+				  </form>
+			  </main>
+			</div>
+		</div>
+	</div>
+<div class="formulario__grupo formulario__grupo-btn-enviar">
+	<button type="submit" class="formulario__btn" value="Cargar Datos" onClick="cargarDatos()">CARGAR DATOS</button>
+</div>
+	<script src="../JS/popup.js"></script>
+	<script src="../JS/script3.js"></script>
+<div class="contenido" align="center">
+		<table width="90%" border="0" align="center" id="tablaDeDatos" valign="middle" bgcolor=#FFFFFF>
+		  	<tbody >
+				<tr>
+				  <td width="13%" align="left" ><h4>CEDULA</h4></td>
+				  <td width="15%" align="left" ><h4>APELLIDO</h4></td>
+				  <td width="15%" align="left" ><h4>NOMBRE</h4></td>
+				  <td width="19%" align="left" ><h4>CORREO</h4></td>
+				  <td width="15%" align="left" ><h4>DIRECCION</h4></td>
+				  <td width="15%" align="left" ><h4>CELULAR</h4></td>
+				  <td width="15%" align="left" ><h4>ESTADO</h4></td>
+				  <td width="15%" align="left" ><h4>OPCIONES</h4></td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>
+	<div class="overlay" id="editt">
+			<div class="popup" id="popUpEditar">
+				<a class="popUpEditar"><i class="fas fa-times"  onClick="cerrarPopUpEditar()"></i></a>
+				<h1>EDITAR</h1>
+				<h4>Actualice los datos del cliente.</h4>
+				
+				<main>
+					<form action="" class="formulario" id="editarformulario">
+						<!-- Grupo: Nombre -->
+							<div class="formulario__grupo" id="grupo__editarNombreU" >
+								<label for="editarNombreU" class="formulario__label"><h2>NOMBRE:</h2></label>
+								<div class="formulario__grupo-input">
+									<input name="editarNombreU" type="text" required="required" class="formulario__input" id="editarNombreU" placeholder="Nombre del cliente">
+									<i class="formulario__validacion-estado fas fa-times-circle"></i>
+								</div>
+								<p class="formulario__input-error">Los nombres solo pueden contener caractéres alfabéticos.</p>
+							</div>
+						<!-- Grupo: Apellido -->
+						<div class="formulario__grupo" id="grupo__editarNombreR">
+							<label for="editarNombreR" class="formulario__label"><h2>APELLIDO:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="editarNombreR" type="text" required="required" class="formulario__input" id="editarNombreR" placeholder="Apellido del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">Los apellidos solo pueden contener caractéres alfabéticos.</p>
+						</div>
+						<!-- Grupo: Usuario -->
+						<div class="formulario__grupo" id="grupo__editarUsuarioR">
+							<label for="editarUsuarioR" class="formulario__label">
+							<h2>DIRECCION:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="editarUsuarioR" type="text" required="required" class="formulario__input" id="editarUsuarioR" placeholder="dirección del domicilio">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">Ingrese bien la dirección.</p>
+						</div>
+						<!-- Grupo: Contraseña -->
+						<div class="formulario__grupo" id="grupo__editarPassword">
+							<label for="editarPassword" class="formulario__label">
+							<h2>CELULAR:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="editarPassword" type="text" required="required" class="formulario__input" id="editarPassword" placeholder="Celular del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El número celular debe tener 10 dígitos, incluido el 0</p>
+						</div>
+						<!-- Grupo: Correo -->
+						<div class="formulario__grupo" id="grupo__editarCorreo">
+							<label for="editarCorreo" class="formulario__label"><h2>CORREO:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="editarCorreo" type="text" required="required" class="formulario__input" id="editarCorreo" placeholder="Correo del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El correo tiene que ser valido</p>
+						</div>
+						<!-- Grupo: Cédula -->
+						<div class="formulario__grupo" id="grupo__editarCedulaR">
+							<label for="editarCedulaR" class="formulario__label"><h2>CÉDULA:</h2></label>
+							<div class="formulario__grupo-input">
+								<input name="editarCedulaR" type="number" required="required" class="formulario__input" id="editarCedulaR" placeholder="Cédula del cliente">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+							<p class="formulario__input-error">El número de cédula tiene que ser de 10 dígitos numéricos y tiene que ser un número de cédula real.</p>
+						</div>
+						
+<!--plan de internet-->
+						<div class="formulario__grupo" id="grupo__editarplan">
+							<label for="editarplan" class="formulario__label"><h2>Plan de internet:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select4" id="select4">
+							  <option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+						</div>
+						
+						<!--plan telefonía-->
+					  <div class="formulario__grupo" id="grupo__editarplan2">
+							<label for="editarplan" class="formulario__label"><h2>Plan de telefonía:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select5" id="select5">
+								<option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+					  </div>
+						
+						<!--plan de tv-->
+						<div class="formulario__grupo" id="grupo__editarplan3">
+							<label for="editarplan" class="formulario__label"><h2>Plan de TV satélital:</h2></label>
+							<div class="formulario__grupo-input">
+								<i class="formulario__validacion-estado fas fa-times-circle"></i>
+							</div>
+                            <select name="select6" id="select6">
+								<option value="ninguno">ninguno</option>
+                              <option value="básico">básico</option>
+                              <option value="medio">medio</option>
+                              <option value="avanzado">avanzado</option>
+                              
+                            </select>
+						</div>
+						
+						<!-- Grupo: Terminos y Condiciones -->
+						<div class="formulario__grupo formulario__grupo-btn-enviar">
+						  	<button type="submit" class="formulario__btn" id="botonGuardarEditados">Enviar</button>
+							<p class="formulario__mensaje-exito" id="formulario__editarMensaje-exito"></p>
+						</div>
+					</form>
+				</main>
+			</div>
+		</div>
+	<script src="../JS/script2.js"></script>
+	
+</body>
+</html>
