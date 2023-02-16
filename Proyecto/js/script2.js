@@ -1,3 +1,4 @@
+
 const editarformulario = document.getElementById('editarformulario');
 const editarInputs = document.querySelectorAll('#editarformulario input');
 const expresionesEditar = {
