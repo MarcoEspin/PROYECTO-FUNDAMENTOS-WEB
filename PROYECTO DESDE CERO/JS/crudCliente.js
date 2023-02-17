@@ -2,9 +2,11 @@
 
 
 var productNameInp = document.getElementById('pName');
-var productPriceInp = document.getElementById('pPrice');
-var productCategoryInp = document.getElementById('pCat');
-var productDescriptionInp = document.getElementById('pDesc');
+var productLastNameInp = document.getElementById('pLastName');
+var productCedulaInp = document.getElementById('pCedula');
+var productCorreoInp = document.getElementById('pCorreo');
+//var productCategoryInp = document.getElementById('pCat');
+var productDireccionInp = document.getElementById('pDireccion');
 var addBtn = document.getElementById('addBtn');
 var resetBtn = document.getElementById('resetBtn');
 var updateBtn = document.getElementById('updateBtn');
@@ -12,7 +14,7 @@ updateBtn.style.display = "none";
 var inputs = document.getElementsByClassName('form-control');
 var currentIndex;
 var alertName = document.getElementById('alertName');
-var alertPrice = document.getElementById('alertPrice');
+var alertLastName = document.getElementById('alertLastName');
 var alertCate = document.getElementById('alertCate');
 var alertDesc = document.getElementById('alertDesc');
 var searchNameInput = document.getElementById('searchName');
@@ -26,7 +28,7 @@ if(JSON.parse (localStorage.getItem('productsList')) != null) {
 
 addBtn.onclick = function(){
     for(var i = 0; i < inputs.length; i++){
-        if(validProductName () == true && validProductPrice () == true && validProductCate () == true  && isProductExist () != true)
+        if(validProductName () == true && isProductExist () != true)
         {
             addProduct ();
             displayProduct ();
@@ -35,7 +37,7 @@ addBtn.onclick = function(){
         }
         else if(isProductExist ())
         {
-            alert('This Product already exist');
+            alert('El usuario ingresado ya existe');
             resetForm();
             return 1;
         }
@@ -47,7 +49,7 @@ addBtn.onclick = function(){
         }
         else
         {
-            alert('The Registration is invalid..');
+            alert('Registro Inválido..');
             resetForm();
             return 0;
         }
@@ -69,9 +71,10 @@ function addProduct (){
     var product =
     {
         name : productNameInp.value,
-        price : productPriceInp.value,
-        cate : productCategoryInp.value,
-        desc : productDescriptionInp.value,
+        lname: productLastNameInp.value,
+        cedula : productCedulaInp.value,
+        correo : productCorreoInp.value,
+        direccion : productDireccionInp.value,
     }
         products.push(product);
         localStorage.setItem('productsList' , JSON.stringify(products));
@@ -84,9 +87,10 @@ function displayProduct (){
         `<tr>
             <td>${i+1}</td>
             <td>${products[i].name}</td>
-            <td>${products[i].price}</td>
-            <td>${products[i].cate}</td>
-            <td>${products[i].desc}</td>
+            <td>${products[i].lname}</td>
+            <td>${products[i].cedula}</td>
+            <td>${products[i].correo}</td>
+            <td>${products[i].direccion}</td>
             <td><button class="btn btn-warning" onclick = "getProductInfo(${i})">Update</button></td>
             <td><button class="btn btn-danger" onclick = "deleteProduct(${i})">Delete</button></td>
         </tr>`
@@ -112,9 +116,10 @@ function getProductInfo (index){
     currentIndex = index;
     var currentProduct = products[index];
         productNameInp.value = currentProduct.name;
-        productPriceInp.value = currentProduct.price;
-        productCategoryInp.value = currentProduct.cate;
-        productDescriptionInp.value = currentProduct.desc;
+        productLastNameInp.value = currentProduct.lname;
+        productCedulaInp.value = currentProduct.cedula;
+        productCorreoInp.value = currentProduct.correo;
+        productDireccionInp.value = currentProduct.direccion;
         updateBtn.style.display = "block";
         addBtn.style.display = 'none';
 }
@@ -122,9 +127,10 @@ function getProductInfo (index){
 function updateProduct (){
     var product = {
         name : productNameInp.value,
-        price : productPriceInp.value,
-        cate : productCategoryInp.value,
-        desc : productDescriptionInp.value,
+        lname: productLastNameInp.value,
+        cedula : productCedulaInp.value,
+        correo : productCorreoInp.value,
+        direccion : productDireccionInp.value,
     }
     products[currentIndex] = product;
     localStorage.setItem('productsList' , JSON.stringify(products));
@@ -139,9 +145,10 @@ function searchName(searchText){
             `<tr>
                 <td>${i+1}</td>
                 <td>${products[i].name}</td>
-                <td>${products[i].price}</td>
-                <td>${products[i].cate}</td>
-                <td>${products[i].desc}</td>
+                <td>${products[i].lname}</td>
+                <td>${products[i].cedula}</td>
+                <td>${products[i].correo}</td>
+                <td>${products[i].direccion}</td>
                 <td><button class="btn btn-warning" onclick = "getProductInfo(${i})">Update</button></td>
                 <td><button class="btn btn-danger" onclick = "deleteProduct(${i})">Delete</button></td>
             </tr>`
@@ -158,9 +165,10 @@ function searchCate(searchText){
             `<tr>
                 <td>${i+1}</td>
                 <td>${products[i].name}</td>
-                <td>${products[i].price}</td>
-                <td>${products[i].cate}</td>
-                <td>${products[i].desc}</td>
+                <td>${products[i].lname}</td>
+                <td>${products[i].cedula}</td>
+                <td>${products[i].correo}</td>
+                <td>${products[i].direccion}</td>
                 <td><button class="btn btn-warning" onclick = "getProductInfo(${i})">Update</button></td>
                 <td><button class="btn btn-danger" onclick = "deleteProduct(${i})">Delete</button></td>
             </tr>`
@@ -188,7 +196,25 @@ function validProductName (){
     }
 }
 
-function validProductPrice (){
+function validProductLastName (){
+    var regexName = /^[A-Z][a-z]{2,10}$/;
+    if(regexName.test(productLastNameInp.value))
+    {
+        productLastNameInp.classList.add('is-valid');
+        productLastNameInp.classList.remove('is-invalid');
+        alertName.classList.add('d-none');
+        return true;
+    }
+    else
+    {
+        productLastNameInp.classList.add('is-invalid');
+        productLastNameInp.classList.remove('is-valid');
+        alertLastName.classList.remove('d-none');
+        return false;
+    }
+}
+
+/*function validProductPrice (){
     var regexPrice = /^([0-9]|[0-9][0-9]|[0-9][0-9][0-9]|[0-9][0-9][0-9][0-9]|10000)$/;
     if(regexPrice.test(productPriceInp.value))
     {
@@ -204,9 +230,9 @@ function validProductPrice (){
         alertPrice.classList.remove('d-none');
         return false;
     }
-}
+}*/
 
-function validProductCate (){
+/*function validProductCate (){
     if(productCategoryInp.value.toLowerCase() == productNameInp.value.toLowerCase())
     {
         productCategoryInp.classList.add('is-valid');
@@ -221,7 +247,7 @@ function validProductCate (){
         alertCate.classList.remove('d-none');
         return false;
     }
-}
+}*/
 
 function isProductExist (){
     for(var i = 0; i < products.length; i++){
@@ -233,9 +259,9 @@ function isProductExist (){
 }
 
 productNameInp.addEventListener('input',validProductName);
-productPriceInp.addEventListener('input',validProductPrice);
-productCategoryInp.addEventListener('input',validProductCate);
-productDescriptionInp.addEventListener('input',validProductDesc);
+productLastNameInp.addEventListener('input',validProductLastName);
+//productCategoryInp.addEventListener('input',validProductCate);
+//productDescriptionInp.addEventListener('input',validProductDesc);
 
 searchNameInput.addEventListener('keyup', function (){
     searchName(this.value);
