@@ -15,6 +15,8 @@ var inputs = document.getElementsByClassName('form-control');
 var currentIndex;
 var alertName = document.getElementById('alertName');
 var alertLastName = document.getElementById('alertLastName');
+var alertCedula = document.getElementById('alertCedula');
+var alertCorreo = document.getElementById('alertCorreo');
 var alertCate = document.getElementById('alertCate');
 var alertDesc = document.getElementById('alertDesc');
 var searchNameInput = document.getElementById('searchName');
@@ -220,32 +222,35 @@ function validCedula(expresion, input, campo){
     var total = 0;
     var longitud = cad.length;
     var longcheck = longitud - 1;
-    if (cad !== "" && longitud === 10  && expresion.test(input.value)){
-		productCedulaInp.classList.add('is-valid');
+    
+    if(regexCedula.test(productCedulaInp.value)){
+        productCedulaInp.classList.add('is-valid');
         productCedulaInp.classList.remove('is-invalid');
-        alertName.classList.add('d-none');
+        alertCedula.classList.add('d-none');
         return true;
-		for(i = 0; i < longcheck; i++){
-        	if (i%2 === 0) {
-            	var aux = cad.charAt(i) * 2;
-              	if (aux > 9) aux -= 9;
-              	total += aux;
-            } else {
-            	total += parseInt(cad.charAt(i)); // parseInt o concatenará en lugar de sumar
-            }
-		}
-        total = total % 10 ? 10 - total % 10 : 0;
-        if (cad.charAt(longitud-1) == total && expresion.test(input.value)) {
-			productCedulaInp.classList.add('is-valid');
-            productCedulaInp.classList.remove('is-invalid');
-            alertName.classList.add('d-none');
-            return true;
-		} else {
-			productCedulaInp.classList.add('is-invalid');
-            productCedulaInp.classList.remove('is-valid');
-            productCedulaInp.classList.remove('d-none');
-            return false;
-		}
+    }else{
+        productCedulaInp.classList.add('is-invalid');
+        productCedulaInp.classList.remove('is-valid');
+        alertCedula.classList.remove('d-none');
+        return false;
+    }
+}
+
+function validCorreo (){
+    var regexCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    if(regexCorreo.test(productCorreoInp.value))
+    {
+        productCorreoInp.classList.add('is-valid');
+        productCorreoInp.classList.remove('is-invalid');
+        alertCorreo.classList.add('d-none');
+        return true;
+    }
+    else
+    {
+        productCorreoInp.classList.add('is-invalid');
+        productCorreoInp.classList.remove('is-valid');
+        alertCorreo.classList.remove('d-none');
+        return false;
     }
 }
 
@@ -296,6 +301,7 @@ function isProductExist (){
 productNameInp.addEventListener('input',validProductName);
 productLastNameInp.addEventListener('input',validProductLastName);
 productCedulaInp.addEventListener('input',validCedula);
+productCorreoInp.addEventListener('input',validCorreo);
 
 //productCategoryInp.addEventListener('input',validProductCate);
 //productDescriptionInp.addEventListener('input',validProductDesc);

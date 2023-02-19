@@ -14,6 +14,8 @@ updateBtnPro.style.display = "none";
 var inputsPro = document.getElementsByClassName('form-control');
 var currentIndexPro;
 var alertNamePro = document.getElementById('alertNamePro');
+var alertContactoPro = document.getElementById('alertContactoPro');
+
 //var alertLastName = document.getElementById('alertLastName');
 //var alertCate = document.getElementById('alertCate');
 //var alertDesc = document.getElementById('alertDesc');
@@ -161,8 +163,8 @@ function searchCate(searchText){
 
 
 function validProductNamePro (){
-    var regexName = /^[A-Z][a-z]{2,10}$/;
-    if(regexName.test(productNameProInp.value))
+    var regexNamePro = /^[A-Za-zÀ-ÿ- ]{3,15}$/;
+    if(regexNamePro.test(productNameProInp.value))
     {
         productNameProInp.classList.add('is-valid');
         productNameProInp.classList.remove('is-invalid');
@@ -174,6 +176,22 @@ function validProductNamePro (){
         productNameProInp.classList.add('is-invalid');
         productNameProInp.classList.remove('is-valid');
         alertNamePro.classList.remove('d-none');
+        return false;
+    }
+}
+
+function validContactoPro(){
+    var regexContactoPro = /^.{10}$/;
+    
+    if(regexContactoPro.test(productContactoPro.value)){
+        productContactoPro.classList.add('is-valid');
+        productContactoPro.classList.remove('is-invalid');
+        alertContactoPro.classList.add('d-none');
+        return true;
+    }else{
+        productContactoPro.classList.add('is-invalid');
+        productContactoPro.classList.remove('is-valid');
+        alertContactoPro.classList.remove('d-none');
         return false;
     }
 }
@@ -241,6 +259,8 @@ function isProductExistPro (){
 }
 
 productNameProInp.addEventListener('input',validProductNamePro);
+productContactoPro.addEventListener('input',validContactoPro);
+
 //productContactoPro.addEventListener('input',validProductLastName);
 //productCategoryInp.addEventListener('input',validProductCate);
 //productDescriptionInp.addEventListener('input',validProductDesc);
