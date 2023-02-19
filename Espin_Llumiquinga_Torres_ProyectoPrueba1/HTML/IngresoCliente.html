@@ -68,11 +68,115 @@
                   </tbody>
                </table>
             </div>
-         </div>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <h2 class="fs-3 fw-bold text-decoration-underline mb-5">INGRESO DEL PRODUCTO</h2>
+
+         <label>PROCESADOR: </label>
+         <select id="tipoProcesador" onchange="mostrarSeleccionProcesador()">
+            <option value="Core i5">Core i5</option>
+            <option value="Core i7">Core i7</option>
+            <option value="Core i9">Core i9</option>
+            <option value="Raizen 7">Raizen 7</option>
+          </select>
+         <input id="procesador" type="text"  placeholder="" class="form-control mb-2 w-75 mx-auto">
+         
+         <label>MEMORIA RAM: </label>
+         <select id="tipoRam" name="frutas">
+            <option value="Kingston">Kingston</option>
+            <option value="Crucial">Crucial</option>
+            <option value="Patriot">Patriot</option>
+            <option value="HyperX">HyperX</option>
+          </select>
+         <input id="ram" type="text"  placeholder="" class="form-control mb-2 w-75 mx-auto">
+         
+         <label>TARJETA GRÁFICA: </label>
+         <select id="tipoTarGra" name="frutas">
+            <option value="GeForce RTX 2080">GeForce RTX 2080</option>
+            <option value="GeForce RTX 2070">GeForce RTX 2070</option>
+            <option value="Radeon RX 5700">Radeon RX 5700</option>
+            <option value="Asrock AMD Radeon RX 5600 XT">Asrock AMD Radeon RX 5600 XT</option>
+          </select>
+         <input id="tarjetaGrafica" type="text"  placeholder="" class="form-control mb-2 w-75 mx-auto">
+         
+         <label>BATERÍA: </label>
+         <select id="tipoBateria" name="frutas">
+            <option value="Dell">Dell</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="Asus">Asus</option>
+            <option value="HP">HP</option>
+          </select>
+         <input id="bateria" type="text"  placeholder="" class="form-control mb-2 w-75 mx-auto">
+
+
+            <div class="buttons w-75 mx-auto">
+               <div class="row g-0">
+                  <div class="col-6 text-start">
+                     <button class="btn btn-primary mt-3 p-2" id="updateBtnProducto">Actualizar Información</button>
+                  </div>
+                  <div class="col-6 text-end">
+                     <button class="btn btn-primary mt-3 me-2 p-2" id="resetBtnProducto">Borrar Formulario</button>
+                     <button class="btn btn-primary mt-3 p-2" id="addBtnProducto">Añadir Producto</button>
+                  </div>
+               </div>
+            </div>
+
+            <div class="w-75 mx-auto">
+               <table class="table table-striped mt-4 text-center">
+                  <thead>
+                 <th>índice</th>
+                     <th>Procesador</th>
+                     <th>Memoria RAM</th>
+                     <th>Tarjeta Gráfica</th>
+                     <th>Batería</th>
+                     <th id="buttonUpdateProducto">Actualizar</th>
+                     <th id="buttonDeleteProducto">Eliminar</th>
+                  </thead>
+                  <tbody id="myTableProducto">
+                     
+                  </tbody>
+               </table>
+            </div>
+         
       </section>
+   </div>
 
 <div class="line w-100 my-3"></div>
 <script src="../js/crudCliente.js"></script>
+<script src="../js/crudProducto.js"></script>
 	
+<script>
+   var select1 = document.getElementById("tipoProcesador");
+   var input1 = document.getElementById("procesador");
+
+   var select2 = document.getElementById("tipoRam");
+   var input2 = document.getElementById("ram");
+
+   var select3 = document.getElementById("tipoTarGra");
+   var input3 = document.getElementById("tarjetaGrafica");
+
+   var select4 = document.getElementById("tipoBateria");
+   var input4 = document.getElementById("bateria");
+
+   select1.onchange = function() {
+      input1.value = select1.value;
+   };
+
+   select2.onchange = function() {
+      input2.value = select2.value;
+   };
+
+   select3.onchange = function() {
+      input3.value = select3.value;
+   };
+
+   select4.onchange = function() {
+      input4.value = select4.value;
+   };
+ </script>
+
 </body>
 </html>

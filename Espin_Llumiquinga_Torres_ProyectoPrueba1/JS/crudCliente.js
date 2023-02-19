@@ -1,6 +1,5 @@
 // JavaScript Document
 
-
 var productNameInp = document.getElementById('pName');
 var productLastNameInp = document.getElementById('pLastName');
 var productCedulaInp = document.getElementById('pCedula');
