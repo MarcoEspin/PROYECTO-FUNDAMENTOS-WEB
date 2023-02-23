@@ -1,0 +1,32 @@
+[
+    {
+        "id": "2",
+        "ncliente": "producto",
+        "telefonoc": "2222222",
+        "direccionc": "Conocoto"
+    },
+    {
+        "id": 3,
+        "ncliente": "Pavel",
+        "telefonoc": "0999900000",
+        "direccionc": "J montalvo"
+    },
+    {
+        "id": 4,
+        "ncliente": "ddddddddd",
+        "telefonoc": "44444444444444",
+        "direccionc": "gggggggggggggg"
+    },
+    {
+        "id": 5,
+        "ncliente": "TIN",
+        "telefonoc": "333333",
+        "direccionc": "TIN CON"
+    },
+    {
+        "id": 6,
+        "ncliente": "marco",
+        "telefonoc": "2245447",
+        "direccionc": "hfewjkgjeh"
+    }
+]

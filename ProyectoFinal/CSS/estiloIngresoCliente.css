@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
 body{
     background-color: #013220;
 }
@@ -20,4 +19,20 @@ h1 , h3{
         width: 100% !important;
         /* margin: auto !important; */
     }
+}
+
+#buttonUpdate{
+    background-color: #227DA3;
+}
+
+#buttonUpdate:hover{
+    background-color: #134459;
+}
+
+#buttonDelete{
+    background-color: #227DA3;
+}
+
+#buttonDelete:hover{
+    background-color: #134459;
 }

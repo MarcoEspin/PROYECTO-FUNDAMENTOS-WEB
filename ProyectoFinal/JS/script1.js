@@ -46,7 +46,4 @@ form.addEventListener("submit", e=>{
 			}
 		} 
 	}
-	var archivo= "DATOS/datos.txt";
-	xhr.open("GET", archivo, true);
-	xhr.send();   
 });      

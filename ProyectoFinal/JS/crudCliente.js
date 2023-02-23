@@ -15,16 +15,50 @@ var inputs = document.getElementsByClassName('form-control');
 var currentIndex;
 var alertName = document.getElementById('alertName');
 var alertLastName = document.getElementById('alertLastName');
+var alertCedula = document.getElementById('alertCedula');
+var alertCorreo = document.getElementById('alertCorreo');
 var alertCate = document.getElementById('alertCate');
 var alertDesc = document.getElementById('alertDesc');
 var searchNameInput = document.getElementById('searchName');
 var searchCateInput = document.getElementById('searchCate');
-
 var products = [];
-if(JSON.parse (localStorage.getItem('productsList')) != null) {
-    products = JSON.parse (localStorage.getItem('productsList'));
+let repClientes;
+ function  obtenerDatos(){
+    var row = '';
+    var i = 0;
+   fetch("../DATOS/cliente.json")
+   .then(repClientes => repClientes.json())
+   .then( repC => { 
+        repC.forEach( cliente=> {
+            row += 
+            `<tr>
+           <td>${i+1}</td>
+           <td>${cliente.name}</td>
+           <td>${cliente.lname}</td>
+           <td>${cliente.cedula}</td>
+           <td>${cliente.correo}</td>
+           <td>${cliente.direccion}</td>
+           <td><button class="btn btn-warning" onclick = "getProductInfo(${i})">Update</button></td>
+           <td><button class="btn btn-danger" onclick = "deleteProduct(${i})">Delete</button></td>
+           </tr>`
+           document.getElementById('myTable').innerHTML = row;
+           i++;
+         });
+    })
+    //console.log(row);
+   // document.getElementById('myTable').innerHTML = row;
+
+   }
+obtenerDatos();
+
+
+
+/* 
+if(JSON.parse (repClientes.getItem('name')) != null) {
+    products = JSON.parse (repClientes.getItem('productsList'));
     displayProduct();
-}
+} */
+//displayProduct();
 
 addBtn.onclick = function(){
     for(var i = 0; i < inputs.length; i++){
@@ -68,6 +102,7 @@ updateBtn.onclick = function(){
 }
 
 function addProduct (){
+   
     var product =
     {
         name : productNameInp.value,
@@ -76,21 +111,23 @@ function addProduct (){
         correo : productCorreoInp.value,
         direccion : productDireccionInp.value,
     }
+   
+  
         products.push(product);
-        localStorage.setItem('productsList' , JSON.stringify(products));
+        repClientes.setItem('productsList' , JSON.stringify(products));
 }
 
 function displayProduct (){
     var row = '';
-    for (var i = 0; i < products.length; i++){
+    for (var i = 0; i < repClientes.length; i++){
         row += 
         `<tr>
             <td>${i+1}</td>
-            <td>${products[i].name}</td>
-            <td>${products[i].lname}</td>
-            <td>${products[i].cedula}</td>
-            <td>${products[i].correo}</td>
-            <td>${products[i].direccion}</td>
+            <td>${repClientes[i].name}</td>
+            <td>${repClientes[i].lname}</td>
+            <td>${repClientes[i].cedula}</td>
+            <td>${repClientes[i].correo}</td>
+            <td>${repClientes[i].direccion}</td>
             <td><button class="btn btn-warning" onclick = "getProductInfo(${i})">Update</button></td>
             <td><button class="btn btn-danger" onclick = "deleteProduct(${i})">Delete</button></td>
         </tr>`
@@ -179,7 +216,7 @@ function searchCate(searchText){
 
 
 function validProductName (){
-    var regexName = /^[A-Z][a-z]{2,10}$/;
+    var regexName = /^[A-Za-zÀ-ÿ- ]{3,15}$/;
     if(regexName.test(productNameInp.value))
     {
         productNameInp.classList.add('is-valid');
@@ -197,7 +234,7 @@ function validProductName (){
 }
 
 function validProductLastName (){
-    var regexName = /^[A-Z][a-z]{2,10}$/;
+    var regexName = /^[A-Za-zÀ-ÿ- ]{3,15}$/;
     if(regexName.test(productLastNameInp.value))
     {
         productLastNameInp.classList.add('is-valid');
@@ -210,6 +247,44 @@ function validProductLastName (){
         productLastNameInp.classList.add('is-invalid');
         productLastNameInp.classList.remove('is-valid');
         alertLastName.classList.remove('d-none');
+        return false;
+    }
+}
+
+function validCedula(expresion, input, campo){
+    var regexCedula = /^.{10}$/;
+    var cad = productCedulaInp.value.trim();
+    var total = 0;
+    var longitud = cad.length;
+    var longcheck = longitud - 1;
+    
+    if(regexCedula.test(productCedulaInp.value)){
+        productCedulaInp.classList.add('is-valid');
+        productCedulaInp.classList.remove('is-invalid');
+        alertCedula.classList.add('d-none');
+        return true;
+    }else{
+        productCedulaInp.classList.add('is-invalid');
+        productCedulaInp.classList.remove('is-valid');
+        alertCedula.classList.remove('d-none');
+        return false;
+    }
+}
+
+function validCorreo (){
+    var regexCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    if(regexCorreo.test(productCorreoInp.value))
+    {
+        productCorreoInp.classList.add('is-valid');
+        productCorreoInp.classList.remove('is-invalid');
+        alertCorreo.classList.add('d-none');
+        return true;
+    }
+    else
+    {
+        productCorreoInp.classList.add('is-invalid');
+        productCorreoInp.classList.remove('is-valid');
+        alertCorreo.classList.remove('d-none');
         return false;
     }
 }
@@ -260,13 +335,16 @@ function isProductExist (){
 
 productNameInp.addEventListener('input',validProductName);
 productLastNameInp.addEventListener('input',validProductLastName);
+productCedulaInp.addEventListener('input',validCedula);
+productCorreoInp.addEventListener('input',validCorreo);
+
 //productCategoryInp.addEventListener('input',validProductCate);
 //productDescriptionInp.addEventListener('input',validProductDesc);
 
-searchNameInput.addEventListener('keyup', function (){
-    searchName(this.value);
-})
+// searchNameInput.addEventListener('keyup', function (){
+//     searchName(this.value);
+// })
 
-searchCateInput.addEventListener('keyup', function (){
-    searchCate(this.value);
-})
+// searchCateInput.addEventListener('keyup', function (){
+//     searchCate(this.value);
+// })
