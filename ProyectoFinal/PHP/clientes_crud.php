@@ -42,6 +42,7 @@ class Master
             "id" => $id,
             "ncliente" => $ncliente,
             "telefonoc" => $telefonoc,
+            "correoc" => $correoc,
             "direccionc" => $direccionc
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);

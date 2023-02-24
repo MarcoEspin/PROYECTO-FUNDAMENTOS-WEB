@@ -7,7 +7,7 @@ class Master
      */
     function get_all_data()
     {
-        $json = (array) json_decode(file_get_contents('../DATOS/inventario.json'));
+        $json = (array) json_decode(file_get_contents('../DATOS/ordenProduccion.json'));
         $data = [];
         foreach ($json as $row) {
             $data[$row->id] = $row;
@@ -32,21 +32,21 @@ class Master
      */
     function insert_to_json()
     {
-        $tipoIn = addslashes($_POST['tipoIn']);
-        $nombreIn = addslashes($_POST['nombreIn']);
-        $cantidadIn = addslashes($_POST['cantidadIn']);
-        $nomProveedorIn = addslashes($_POST['nomProveedorIn']);
+        $ncliente = addslashes($_POST['ncliente']);
+        $telefonoc = addslashes($_POST['telefonoc']);
+        $correoc = addslashes($_POST['correoc']);
+        $direccionc = addslashes($_POST['direccionc']);
         $data = $this->get_all_data();
         $id = array_key_last($data) + 1;
         $data[$id] = (object) [
             "id" => $id,
-            "tipoIn" => $tipoIn,
-            "nombreIn" => $nombreIn,
-            "cantidadIn" => $cantidadIn,
-            "nomProveedorIn" => $nomProveedorIn
+            "ncliente" => $ncliente,
+            "telefonoc" => $telefonoc,
+            "correoc" => $correoc,
+            "direccionc" => $direccionc
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-        $insert = file_put_contents('../DATOS/inventario.json', $json);
+        $insert = file_put_contents('../DATOS/ordenProduccion.json', $json);
         if ($insert) {
             $resp['status'] = 'success';
         } else {
@@ -60,21 +60,21 @@ class Master
     function update_json_data()
     {
         $id = $_POST['id'];
-        $tipoIn = addslashes($_POST['tipoIn']);
-        $nombreIn = addslashes($_POST['nombreIn']);
-        $cantidadIn = addslashes($_POST['cantidadIn']);
-        $nomProveedorIn = addslashes($_POST['nomProveedorIn']);
+        $ncliente = addslashes($_POST['ncliente']);
+        $telefonoc = addslashes($_POST['telefonoc']);
+        $correoc = addslashes($_POST['correoc']);
+        $direccionc = addslashes($_POST['direccionc']);
 
         $data = $this->get_all_data();
         $data[$id] = (object) [
             "id" => $id,
-            "tipoIn" => $tipoIn,
-            "nombreIn" => $nombreIn,
-            "cantidadIn" =>$cantidadIn,
-            "nomProveedorIn" => $nomProveedorIn
+            "ncliente" => $ncliente,
+            "telefonoc" => $telefonoc,
+            "correoc" =>$correoc,
+            "direccionc" => $direccionc
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-        $update = file_put_contents('../DATOS/inventario.json', $json);
+        $update = file_put_contents('../DATOS/ordenProduccion.json', $json);
         if ($update) {
             $resp['status'] = 'success';
         } else {
@@ -95,7 +95,7 @@ class Master
             if (isset($data[$id])) {
                 unset($data[$id]);
                 $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-                $update = file_put_contents('../DATOS/inventario.json', $json);
+                $update = file_put_contents('../DATOS/ordenProduccion.json', $json);
                 if ($update) {
                     $resp['status'] = 'success';
                 } else {

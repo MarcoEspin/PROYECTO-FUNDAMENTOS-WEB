@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('inventario_crud.php');
+require_once('produccion_crud.php');
 $master = new Master();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id'] > 0) {
@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($save['status'])) {
         if ($save['status'] == 'success') {
             if (isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id'] > 0)
-                $_SESSION['msg_success'] = 'Se ha agregado un nuevo miembro al archivo JSON con éxito';
+                $_SESSION['msg_success'] = 'Se ha agregado un nuevo Cliente';
             else
-                $_SESSION['msg_success'] = 'Los detalles del miembro se han actualizado en el archivo JSON con éxito';
-            header('location: ingresoInventario.php');
+                $_SESSION['msg_success'] = 'Se ha actualizado correctamente';
+            header('location: ingresoProduccion.php');
             exit;
         }
     } else {
-        $_SESSION['msg_error'] = 'Los detalles no se pudieron guardar debido a algún error del sistema.';
+        $_SESSION['msg_error'] = 'Error del sistema no se pudo guardar!';
     }
 }
 $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
@@ -44,7 +44,7 @@ $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
 <body>
 
     <div class="container px-5 my-3">
-        <h2 class="text-center">Editar Inventario</h2>
+        <h2 class="text-center">Editar Clientes</h2>
         <div class="row">
             <!-- Contenedor de contenido de página -->
             <div class="col-lg-10 col-md-11 col-sm-12 mt-4 pt-4 mx-auto">
@@ -85,41 +85,41 @@ $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
                             <div class="d-flex justify-content-between">
                                 <div class="card-title col-auto flex-shrink-1 flex-grow-1">Pestaña de edicion</div>
                                 <div class="col-atuo">
-                                    <button class="btn btn-danger btn-sm btn-flat" id="add" style="background-color:#721E4F; border-color: #721E4F"><i class="fa fa-plus-square"></i> Añadir Producto</button>
+                                    <button class="btn btn-danger btn-sm btn-flat" id="add" style="background-color:#721E4F; border-color: #721E4F"><i class="fa fa-plus-square"></i> Añadir Cliente</button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="container-fluid">
                                 <?php if (isset($data->id)) : ?>
-                                    <p class="text-muted"><i>Actualizar los detalles de <b><?= isset($data->nombreIn) ? $data->nombreIn: '' ?></b></i></p>
+                                    <p class="text-muted"><i>Actualizar los detalles de <b><?= isset($data->ncliente) ? $data->ncliente: '' ?></b></i></p>
                                 <?php else : ?>
-                                    <p class="text-muted"><i>Añadir Producto</b></i></p>
+                                    <p class="text-muted"><i>Añadir Cliente</b></i></p>
                                 <?php endif; ?>
                                 <form id="member-form" action="" method="POST">
                                     <input type="hidden" name="id" value="<?= isset($data->id) ? $data->id : '' ?>">
                                     <div class="mb-3">
-                                        <label for="tipoIn" class="form-label">Tipo de Producto</label>
-                                        <input type="text" class="form-control rounded-0" id="tipoIn" name="tipoIn" required="required" value="<?= isset($data->tipoIn) ? $data->tipoIn: '' ?>">
+                                        <label for="ncliente" class="form-label">Nombre completo del Cliente</label>
+                                        <input type="text" class="form-control rounded-0" id="ncliente" name="ncliente" required="required" value="<?= isset($data->ncliente) ? $data->ncliente: '' ?>">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="nombreIn" class="form-label">Nombre del Producto</label>
-                                        <input type="text" class="form-control rounded-0" id="nombreIn" name="nombreIn" required="required" value="<?= isset($data->nombreIn) ? $data->nombreIn: '' ?>">
+                                        <label for="telefonoc" class="form-label">Celular</label>
+                                        <input type="text" class="form-control rounded-0" id="telefonoc" name="telefonoc" required="required" value="<?= isset($data->telefonoc) ? $data->telefonoc: '' ?>">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="cantidadIn" class="form-label">Cantidad</label>
-                                        <input type="text" class="form-control rounded-0" id="cantidadIn" name="cantidadIn" required="required" value="<?= isset($data->cantidadIn) ? $data->cantidadIn: '' ?>">
+                                        <label for="correoc" class="form-label">Correo electrónico</label>
+                                        <input type="text" class="form-control rounded-0" id="correoc" name="correoc" required="required" value="<?= isset($data->correoc) ? $data->correoc: '' ?>">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="nomProveedorIn" class="form-label">Nombre del Proveedor</label>
-                                        <input type="text" class="form-control rounded-0" id="nomProveedorIn" name="nomProveedorIn" required="nomProveedorIn" value="<?= isset($data->nomProveedorIn) ? $data->nomProveedorIn: '' ?>">
+                                        <label for="direccionc" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control rounded-0" id="direccionc" name="direccionc" required="required" value="<?= isset($data->direccionc) ? $data->direccionc: '' ?>">
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="card-footer text-center">
                             <button class="btn btn-danger rounded-0" form="member-form" style="background-color: #134459;border-color: #134459"><i class="fa-solid fa-save" ></i> Guardar y Actualizar Cliente</button>
-                            <a class="btn btn-light border rounded-0" href="ingresoInventario.php" style="background-color:#721E4F; border-color: #721E4F"><i class="fa-solid fa-times" ></i> <span style="color: #FFFFFF">Salir</span></a>
+                            <a class="btn btn-light border rounded-0" href="ingresoProduccion.php" style="background-color:#721E4F; border-color: #721E4F"><i class="fa-solid fa-times" ></i> <span style="color: #FFFFFF">Salir</span></a>
                         </div>
                     </div>
                 </div>
