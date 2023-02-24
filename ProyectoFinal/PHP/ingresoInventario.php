@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../PHP/clientes_crud.php');
+require_once('../PHP/inventario_crud.php');
 $master = new Master();
 $json_data = $master->get_all_data();
 ?>
@@ -63,7 +63,7 @@ $json_data = $master->get_all_data();
                                 <div class="card-title col-auto flex-shrink-1 flex-grow-1">Clientes</div>
                                 <nav class="botonesx">
                                 <div class="col-atuo">
-                                    <a class="btn btn-danger btn-sm btn-flat" href="clientes_nuevo.php" style="background-color: #134459;border-color: #134459"><i
+                                    <a class="btn btn-danger btn-sm btn-flat" href="inventario_nuevo.php" style="background-color: #134459;border-color: #134459"><i
                                             class="fa fa-plus-square"></i>&nbsp Agregar Cliente</a>
                                             <button class="btn btn-primary btn-sm btn-flat" onclick="imprimir()" style="background-color:#721E4F; border-color: #721E4F"><i
                                             class="fa fa-plus-square" ></i>&nbsp Reporte</button>
@@ -111,11 +111,11 @@ $json_data = $master->get_all_data();
                                                     <?= $data->direccionc ?>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="clientes_nuevo.php?id=<?= $data->id ?>"
+                                                    <a href="inventario_nuevo.php?id=<?= $data->id ?>"
                                                         class="btn btn-sm btn-outline-info rounded-0">
                                                         <i class="fa-solid fa-edit"></i>
                                                     </a>
-                                                    <a href="clientes_elimina.php?id=<?= $data->id ?>"
+                                                    <a href="inventario_elimina.php?id=<?= $data->id ?>"
                                                         class="btn btn-sm btn-outline-danger rounded-0"
                                                         onclick="if(confirm(`¿Deseas eliminar del registro a <?= $data->ncliente ?>?`) === false) event.preventDefault();">
                                                         <i class="fa-solid fa-trash"></i>

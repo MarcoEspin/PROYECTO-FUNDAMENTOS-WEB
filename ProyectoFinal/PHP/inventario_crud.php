@@ -7,7 +7,7 @@ class Master
      */
     function get_all_data()
     {
-        $json = (array) json_decode(file_get_contents('../DATOS/clientes.json'));
+        $json = (array) json_decode(file_get_contents('../DATOS/inventario.json'));
         $data = [];
         foreach ($json as $row) {
             $data[$row->id] = $row;
@@ -45,7 +45,7 @@ class Master
             "direccionc" => $direccionc
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-        $insert = file_put_contents('../DATOS/clientes.json', $json);
+        $insert = file_put_contents('../DATOS/inventario.json', $json);
         if ($insert) {
             $resp['status'] = 'success';
         } else {
@@ -73,7 +73,7 @@ class Master
             "direccionc" => $direccionc
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-        $update = file_put_contents('../DATOS/clientes.json', $json);
+        $update = file_put_contents('../DATOS/inventario.json', $json);
         if ($update) {
             $resp['status'] = 'success';
         } else {
@@ -94,7 +94,7 @@ class Master
             if (isset($data[$id])) {
                 unset($data[$id]);
                 $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
-                $update = file_put_contents('../DATOS/clientes.json', $json);
+                $update = file_put_contents('../DATOS/inventario.json', $json);
                 if ($update) {
                     $resp['status'] = 'success';
                 } else {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('clientes_crud.php');
+require_once('inventario_crud.php');
 $master = new Master();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id'] > 0) {
@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($save['status'])) {
         if ($save['status'] == 'success') {
             if (isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id'] > 0)
-                $_SESSION['msg_success'] = 'Se ha agregado un nuevo Cliente';
+                $_SESSION['msg_success'] = 'Se ha agregado un nuevo miembro al archivo JSON con éxito';
             else
-                $_SESSION['msg_success'] = 'Se ha actualizado correctamente';
-            header('location: ingresoCliente.php');
+                $_SESSION['msg_success'] = 'Los detalles del miembro se han actualizado en el archivo JSON con éxito';
+            header('location: ingresoInventario.php');
             exit;
         }
     } else {
-        $_SESSION['msg_error'] = 'Error del sistema no se pudo guardar!';
+        $_SESSION['msg_error'] = 'Los detalles no se pudieron guardar debido a algún error del sistema.';
     }
 }
 $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
@@ -119,7 +119,7 @@ $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
                         </div>
                         <div class="card-footer text-center">
                             <button class="btn btn-danger rounded-0" form="member-form" style="background-color: #134459;border-color: #134459"><i class="fa-solid fa-save" ></i> Guardar y Actualizar Cliente</button>
-                            <a class="btn btn-light border rounded-0" href="ingresoCliente.php" style="background-color:#721E4F; border-color: #721E4F"><i class="fa-solid fa-times" ></i> <span style="color: #FFFFFF">Salir</span></a>
+                            <a class="btn btn-light border rounded-0" href="ingresoInventario.php" style="background-color:#721E4F; border-color: #721E4F"><i class="fa-solid fa-times" ></i> <span style="color: #FFFFFF">Salir</span></a>
                         </div>
                     </div>
                 </div>

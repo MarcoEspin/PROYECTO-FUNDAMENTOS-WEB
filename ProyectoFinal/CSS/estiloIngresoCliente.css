@@ -36,3 +36,11 @@ h1 , h3{
 #buttonDelete:hover{
     background-color: #134459;
 }
+tr:nth-child(even) {
+	background-color: #ddd !important;
+}
+
+tr:hover td{
+	background-color: #7EC0DD !important;
+	color: white !important;
+}
