@@ -1,9 +1,9 @@
 [
     {
-        "id": "1",
-        "tipoIn": "Memoria",
-        "nombreIn": "SSD",
-        "cantidadIn": "10",
-        "nomProveedorIn": "Marlon Torres"
+        "id": 2,
+        "ncliente": "Marlon",
+        "telefonoc": "0998000396",
+        "correoc": "mptorres4@miweb.com",
+        "direccionc": "tojfwgniwogj"
     }
 ]
