@@ -1,6 +1,5 @@
 <?php
-
-class Master
+class MasterCliente
 {
     /**
      * Obtener todos los datos JSON
@@ -37,6 +36,12 @@ class Master
         $correoc = addslashes($_POST['correoc']);
         $direccionc = addslashes($_POST['direccionc']);
         $data = $this->get_all_data();
+        foreach ($data as $dato) {
+			  if ($dato->ncliente == $ncliente) {
+				$resp['failed'] = 'failed';
+				return $resp;
+			  }
+			}
         $id = array_key_last($data) + 1;
         $data[$id] = (object) [
             "id" => $id,

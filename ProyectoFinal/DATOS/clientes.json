@@ -1,20 +1,6 @@
 [
     {
-        "id": 5,
-        "ncliente": "TIN",
-        "telefonoc": "333333",
-        "correoc": "mefji@gmail.com",
-        "direccionc": "TIN CON"
-    },
-    {
-        "id": 6,
-        "ncliente": "marco",
-        "telefonoc": "2245447",
-        "correoc": "mefji@gmail.com",
-        "direccionc": "hfewjkgjeh"
-    },
-    {
-        "id": "7",
+        "id": 1,
         "ncliente": "Marlon",
         "telefonoc": "0998000396",
         "correoc": "mptorres4@miweb.com",

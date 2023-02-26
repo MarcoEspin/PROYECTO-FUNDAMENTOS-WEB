@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../PHP/clientes_crud.php');
-$master = new Master();
+$master = new MasterCliente();
 $json_data = $master->get_all_data();
 ?>
 <!doctype html>
@@ -12,6 +12,7 @@ $json_data = $master->get_all_data();
 	<link rel="stylesheet" href="../CSS/estiloIngresoCliente.css">
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
 	<link rel="icon" href="../img/logoIcono.jpeg">
+	<link rel="stylesheet" href="CSS/estilo.css">
 </head>
 	
 <body>	

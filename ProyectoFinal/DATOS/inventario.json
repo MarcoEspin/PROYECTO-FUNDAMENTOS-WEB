@@ -1,9 +1,44 @@
 [
     {
-        "id": "1",
-        "tipoIn": "Memoria",
-        "nombreIn": "SSD",
+        "id": 2,
+        "nombreIn": "I5 de 10 generaci\u00f3n",
         "cantidadIn": "10",
+        "precioIn": "150",
+        "nomProveedorIn": "Marlon Torres"
+    },
+    {
+        "id": 5,
+        "nombreIn": "RAM",
+        "cantidadIn": "10",
+        "precioIn": "150.99",
+        "nomProveedorIn": "Marlon Torres"
+    },
+    {
+        "id": 6,
+        "nombreIn": "CD",
+        "cantidadIn": "10",
+        "precioIn": "50",
+        "nomProveedorIn": "Martin Torres"
+    },
+    {
+        "id": 7,
+        "nombreIn": "HDD",
+        "cantidadIn": "10",
+        "precioIn": "150",
+        "nomProveedorIn": "Marlo"
+    },
+    {
+        "id": 8,
+        "nombreIn": "RAM",
+        "cantidadIn": "10",
+        "precioIn": "50",
+        "nomProveedorIn": "Marlon Torres"
+    },
+    {
+        "id": 9,
+        "nombreIn": "RAM",
+        "cantidadIn": "10",
+        "precioIn": "250",
         "nomProveedorIn": "Marlon Torres"
     }
 ]

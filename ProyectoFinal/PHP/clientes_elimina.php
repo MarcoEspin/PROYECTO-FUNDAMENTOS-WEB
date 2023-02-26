@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('clientes_crud.php');
-$master = new Master();
+$master = new MasterCliente();
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 if(empty($id)){
     $_SESSION['msg_error'] = "Sin ID de miembro";

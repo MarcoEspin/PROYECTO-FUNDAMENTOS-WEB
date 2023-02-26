@@ -29,20 +29,25 @@ class Master
     }
     /**
      * Insertar datos en un archivo JSON
-     */
-    function insert_to_json()
+     */function insert_to_json()
     {
-        $tipoIn = addslashes($_POST['tipoIn']);
         $nombreIn = addslashes($_POST['nombreIn']);
         $cantidadIn = addslashes($_POST['cantidadIn']);
+        $precioIn = addslashes($_POST['precioIn']);
         $nomProveedorIn = addslashes($_POST['nomProveedorIn']);
         $data = $this->get_all_data();
+		foreach ($data as $dato) {
+		if ($dato->nombreIn == $nombreIn && $dato->nomProveedorIn == $nomProveedorIn) {
+				$resp['failed'] = 'failed';
+				return $resp;
+			}
+		}
         $id = array_key_last($data) + 1;
         $data[$id] = (object) [
             "id" => $id,
-            "tipoIn" => $tipoIn,
             "nombreIn" => $nombreIn,
             "cantidadIn" => $cantidadIn,
+            "precioIn" => $precioIn,
             "nomProveedorIn" => $nomProveedorIn
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);
@@ -54,23 +59,24 @@ class Master
         }
         return $resp;
     }
+			
     /**
      * Actualizar datos del archivo JSON
      */
     function update_json_data()
     {
         $id = $_POST['id'];
-        $tipoIn = addslashes($_POST['tipoIn']);
         $nombreIn = addslashes($_POST['nombreIn']);
         $cantidadIn = addslashes($_POST['cantidadIn']);
+        $precioIn = addslashes($_POST['precioIn']);
         $nomProveedorIn = addslashes($_POST['nomProveedorIn']);
 
         $data = $this->get_all_data();
         $data[$id] = (object) [
             "id" => $id,
-            "tipoIn" => $tipoIn,
             "nombreIn" => $nombreIn,
             "cantidadIn" =>$cantidadIn,
+            "precioIn" => $precioIn,
             "nomProveedorIn" => $nomProveedorIn
         ];
         $json = json_encode(array_values($data), JSON_PRETTY_PRINT);

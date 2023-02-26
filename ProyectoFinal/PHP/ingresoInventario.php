@@ -12,6 +12,8 @@ $json_data = $master->get_all_data();
 	<link rel="stylesheet" href="../CSS/estiloIngresoCliente.css">
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
 	<link rel="icon" href="../img/logoIcono.jpeg">
+	<link rel="stylesheet" href="CSS/estilo.css">
+	
 </head>
 	
 <body>	
@@ -75,7 +77,7 @@ $json_data = $master->get_all_data();
                             <div class="container-fluid">
                                 <table class="table table-stripped table-bordered">
                                     <colgroup>
-                                        <col width="5%">
+										<col width="5%">
                                         <col width="18%">
                                         <col width="18%">
                                         <col width="18%">
@@ -85,9 +87,9 @@ $json_data = $master->get_all_data();
                                     <thead style="background-color:#721E4F; border-button: solid 5px ">
                                         <tr>
                                             <th class="text-center" style= "color: #FFFFFF">Código</th>
-                                            <th class="text-center" style= "color: #FFFFFF">Tipo del Producto</th>
                                             <th class="text-center" style= "color: #FFFFFF">Nombre del Producto</th>
                                             <th class="text-center" style= "color: #FFFFFF">Cantidad</th>
+                                             <th class="text-center" style= "color: #FFFFFF">Precio</th>
                                             <th class="text-center" style= "color: #FFFFFF">Nombre del Proovedor</th>
                                             <th class="text-center" style= "color: #FFFFFF">Acción</th>
                                         </tr>
@@ -99,15 +101,14 @@ $json_data = $master->get_all_data();
                                                     <?= $data->id ?>
                                                 </td>
                                                 <td>
-                                                    <?= $data->tipoIn ?>
-                                                </td>
-                                                <td>
                                                     <?= $data->nombreIn ?>
                                                 </td>
                                                  <td>
                                                  <?= $data->cantidadIn ?>
                                                 </td>
                                                 <td>
+                                                    <?= $data->precioIn ?>
+                                                </td><td>
                                                     <?= $data->nomProveedorIn ?>
                                                 </td>
                                                 <td class="text-center">

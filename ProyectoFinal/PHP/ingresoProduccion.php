@@ -12,6 +12,7 @@ $json_data = $master->get_all_data();
 	<link rel="stylesheet" href="../CSS/estiloIngresoCliente.css">
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
 	<link rel="icon" href="../img/logoIcono.jpeg">
+	<link rel="stylesheet" href="CSS/estilo.css">
 </head>
 	
 <body>	
@@ -76,11 +77,12 @@ $json_data = $master->get_all_data();
                                 <table class="table table-stripped table-bordered">
                                     <colgroup>
                                         <col width="5%">
-                                        <col width="18%">
-                                        <col width="18%">
-                                        <col width="18%">
-                                        <col width="23%">
-                                        <col width="18%">
+                                        <col width="15%">
+                                        <col width="15%">
+                                        <col width="15%">
+                                        <col width="15%">
+                                        <col width="16%">
+                                        <col width="15%">
                                     </colgroup>
                                     <thead style="background-color:#721E4F; border-button: solid 5px ">
                                         <tr>
