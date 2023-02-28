@@ -1,0 +1,45 @@
+[
+    {
+        "id": 3,
+        "tipoIn": null,
+        "nombreIn": "DISCO DURO DE 2TB",
+        "cantidadIn": "100",
+        "precioIn": "34",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": 4,
+        "nombreIn": "MAINBOARD G4 AMD\/INTEL",
+        "cantidadIn": "122",
+        "precioIn": "54",
+        "nomProveedorIn": "INTEL"
+    },
+    {
+        "id": "5",
+        "nombreIn": "MAINBOARD 5G",
+        "cantidadIn": "100",
+        "precioIn": "120",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": "6",
+        "nombreIn": "DISCO DURO DE 2TB SSD",
+        "cantidadIn": "120",
+        "precioIn": "120.2",
+        "nomProveedorIn": "pppppppppp"
+    },
+    {
+        "id": 7,
+        "nombreIn": "ICORE5 10 GENERACION",
+        "cantidadIn": "1",
+        "precioIn": "1000",
+        "nomProveedorIn": "pAVEL"
+    },
+    {
+        "id": 8,
+        "nombreIn": "DISCO DURO DE 2TB",
+        "cantidadIn": "123",
+        "precioIn": "54",
+        "nomProveedorIn": "TECNOMEGA"
+    }
+]

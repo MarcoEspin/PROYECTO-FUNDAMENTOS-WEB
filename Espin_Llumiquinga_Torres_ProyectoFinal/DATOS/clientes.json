@@ -1,0 +1,72 @@
+[
+    {
+        "id": 5,
+        "ncliente": "TIN",
+        "telefonoc": "333333",
+        "correoc": "mefji@gmail.com",
+        "direccionc": "TIN CON"
+    },
+    {
+        "id": 6,
+        "ncliente": "marco",
+        "telefonoc": "2245447",
+        "correoc": "mefji@gmail.com",
+        "direccionc": "hfewjkgjeh"
+    },
+    {
+        "id": "7",
+        "ncliente": "Marlon",
+        "telefonoc": "0998000396",
+        "correoc": "mptorres4@miweb.com",
+        "direccionc": "tojfwgniwogj"
+    },
+    {
+        "id": 8,
+        "ncliente": "PAVEL TORRES",
+        "telefonoc": "0999025970",
+        "correoc": "pavel_torres@hotmail.com",
+        "direccionc": "Conocoto"
+    },
+    {
+        "id": 9,
+        "ncliente": "Pavel",
+        "telefonoc": "2222222",
+        "correoc": "pavel_torres@hotmail.com",
+        "direccionc": "Conocoto"
+    },
+    {
+        "id": 10,
+        "ncliente": "Warlon",
+        "telefonoc": "0999900000",
+        "correoc": "pavel_torres@hotmail.com",
+        "direccionc": "aaaaaaaaaassssssssssssss"
+    },
+    {
+        "id": "11",
+        "ncliente": "BRIGITHY DE TORRES",
+        "telefonoc": "0998235623",
+        "correoc": "brigithy_chavez@hotmail.com",
+        "direccionc": "Cjto. Angela"
+    },
+    {
+        "id": 12,
+        "ncliente": "Martin",
+        "telefonoc": "0999900000",
+        "correoc": "pavel_torres@hotmail.com",
+        "direccionc": "tytyurtyu"
+    },
+    {
+        "id": 13,
+        "ncliente": "Marco",
+        "telefonoc": "0998235623",
+        "correoc": "mptorres4@hotmail.com",
+        "direccionc": "efjjsfjioewjgioj"
+    },
+    {
+        "id": 14,
+        "ncliente": "Pavel",
+        "telefonoc": "435456",
+        "correoc": "brigithy_chavez@hotmail.com",
+        "direccionc": "rwr"
+    }
+]
