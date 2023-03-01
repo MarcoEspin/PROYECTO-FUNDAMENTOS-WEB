@@ -94,7 +94,7 @@ $json_data = $master->get_all_data();
                                     <thead style="background-color:#721E4F; border-button: solid 5px ">
                                     
                                     <input type="text" id="keywords" name="keywords" size="30" maxlength="30">
-                                    <input type="submit" name="search" id="search" value="Buscar">
+                                    <input type="submit" name="search" id="search" value="Buscar" style="background-color: #134459; color:white; margin-bottom: 20px;" autofocus>
                                     
                                         <tr>
                                             <th class="text-center" style= "color: #FFFFFF">Código</th>

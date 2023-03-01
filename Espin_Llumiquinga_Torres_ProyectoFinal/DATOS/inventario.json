@@ -26,20 +26,48 @@
         "nombreIn": "DISCO DURO DE 2TB SSD",
         "cantidadIn": "120",
         "precioIn": "120.2",
-        "nomProveedorIn": "pppppppppp"
+        "nomProveedorIn": "INTEL"
     },
     {
-        "id": 7,
+        "id": "7",
         "nombreIn": "ICORE5 10 GENERACION",
         "cantidadIn": "1",
         "precioIn": "1000",
-        "nomProveedorIn": "pAVEL"
+        "nomProveedorIn": "AMAZON"
     },
     {
         "id": 8,
         "nombreIn": "DISCO DURO DE 2TB",
         "cantidadIn": "123",
         "precioIn": "54",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": 9,
+        "nombreIn": "PROCESADOR i10",
+        "cantidadIn": "5",
+        "precioIn": "500",
+        "nomProveedorIn": "COMPUTRON"
+    },
+    {
+        "id": 10,
+        "nombreIn": "MEMORIA RAM 16 GB",
+        "cantidadIn": "15",
+        "precioIn": "50",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": 11,
+        "nombreIn": "CASE PC",
+        "cantidadIn": "25",
+        "precioIn": "30",
+        "nomProveedorIn": "AMAZON"
+    },
+    {
+        "id": 12,
+        "nombreIn": "TARJETA GRAFICA VisionTek Radeon 5450 2GB",
+        "cantidadIn": "10",
+        "precioIn": "83.99",
         "nomProveedorIn": "TECNOMEGA"
     }
 ]

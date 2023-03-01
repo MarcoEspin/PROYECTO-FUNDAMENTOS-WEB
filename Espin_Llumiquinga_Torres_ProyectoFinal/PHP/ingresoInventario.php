@@ -88,7 +88,7 @@ $json_data = $master->buscar();
                                     <thead style="background-color:#721E4F; border-button: solid 5px ">
                                     
                                     <input type="text" id="keywords" name="keywords" size="30" maxlength="30">
-                                    <input type="submit" name="search" id="search" value="Buscar">
+                                    <input type="submit" name="search" id="search" value="Buscar" style="background-color: #134459; color:white; margin-bottom: 20px;">
                                         <tr>
                                             <th class="text-center" style= "color: #FFFFFF">Código</th>
                                             <th class="text-center" style= "color: #FFFFFF">Nombre del Producto</th>

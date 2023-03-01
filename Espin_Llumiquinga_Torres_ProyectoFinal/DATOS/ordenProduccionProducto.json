@@ -75,5 +75,47 @@
         "nproducto": "MAINBOARD G4 AMD\/INTEL",
         "ncantidad": "2",
         "nprecio": "10"
+    },
+    {
+        "id": 12,
+        "norden": "1",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "1",
+        "nprecio": "20"
+    },
+    {
+        "id": 13,
+        "norden": "1",
+        "nproducto": "MAINBOARD 5G",
+        "ncantidad": "1",
+        "nprecio": "50"
+    },
+    {
+        "id": 14,
+        "norden": "2",
+        "nproducto": "RAM",
+        "ncantidad": "2",
+        "nprecio": "50"
+    },
+    {
+        "id": 15,
+        "norden": "2",
+        "nproducto": "CASE PC",
+        "ncantidad": "1",
+        "nprecio": "40"
+    },
+    {
+        "id": 16,
+        "norden": "3",
+        "nproducto": "ICORE5 10 GENERACION",
+        "ncantidad": "1",
+        "nprecio": "600"
+    },
+    {
+        "id": 17,
+        "norden": "3",
+        "nproducto": "TARJETA GRAFICA VisionTek Radeon 5450 2GB",
+        "ncantidad": "1",
+        "nprecio": "90"
     }
 ]

@@ -101,7 +101,7 @@ $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
                                     <input type="hidden" name="id" value="<?= isset($data->id) ? $data->id : '' ?>">
                                     <div class="mb-3">
                                         <label for="ncliente" class="form-label">Nombre completo del Cliente</label>
-                                        <input type="text" class="form-control rounded-0" id="ncliente" name="ncliente" required="required" onblur="validarTextoMayuscula(this)" value="<?= isset($data->ncliente) ? $data->ncliente: '' ?>">
+                                        <input type="text" class="form-control rounded-0" id="ncliente" name="ncliente" required="required" onblur="validarTextoMayuscula(this)" value="<?= isset($data->ncliente) ? $data->ncliente: '' ?>" autofocus>
                                     </div>
                                     <div class="mb-3">
                                         <label for="telefonoc" class="form-label">Celular</label>
@@ -113,7 +113,7 @@ $data = $master->get_data(isset($_GET['id']) ? $_GET['id'] : '');
                                     </div>
                                     <div class="mb-3">
                                         <label for="direccionc" class="form-label">Dirección</label>
-                                        <input type="text" class="form-control rounded-0" id="direccionc" name="direccionc" required="required" value="<?= isset($data->direccionc) ? $data->direccionc: '' ?>">
+                                        <input style="border: 1px solid #ccc; border-radius: 4px;" type="text" class="form-control rounded-0" id="direccionc" name="direccionc" required="required" value="<?= isset($data->direccionc) ? $data->direccionc: '' ?>">
                                     </div>
                                 </form>
                             </div>
