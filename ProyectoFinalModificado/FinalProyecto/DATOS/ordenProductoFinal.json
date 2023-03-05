@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "norden": "1",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "1",
+        "nprecio": "100"
+    },
+    {
+        "id": 4,
+        "norden": "1",
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": "10",
+        "nprecio": "12"
+    },
+    {
+        "id": 6,
+        "norden": "3",
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": "1",
+        "nprecio": "100"
+    },
+    {
+        "id": 7,
+        "norden": "3",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "1",
+        "nprecio": "60"
+    },
+    {
+        "id": 8,
+        "norden": "4",
+        "nproducto": "TARGATA GRAFICA RTX 3060 12GB 15 Gbps",
+        "ncantidad": "1",
+        "nprecio": "1000"
+    },
+    {
+        "id": 9,
+        "norden": "6",
+        "nproducto": "RAM 8GB",
+        "ncantidad": "4",
+        "nprecio": "120"
+    },
+    {
+        "id": 11,
+        "norden": "6",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "1",
+        "nprecio": "50"
+    },
+    {
+        "id": 12,
+        "norden": "3",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "10",
+        "nprecio": "50"
+    },
+    {
+        "id": 13,
+        "norden": "3",
+        "nproducto": "DISCO DURO DE 2TB",
+        "ncantidad": "10",
+        "nprecio": "50"
+    },
+    {
+        "id": 14,
+        "norden": "3",
+        "nproducto": "MAINBOARD 5G",
+        "ncantidad": "1",
+        "nprecio": "120"
+    },
+    {
+        "id": 15,
+        "norden": null,
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": null,
+        "nprecio": "210"
+    },
+    {
+        "id": 16,
+        "norden": null,
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": null,
+        "nprecio": "210"
+    },
+    {
+        "id": 17,
+        "norden": "6",
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": "1",
+        "nprecio": "210"
+    },
+    {
+        "id": 18,
+        "norden": "8",
+        "nproducto": "MAINBOARD G4 AMD\/INTEL",
+        "ncantidad": "1",
+        "nprecio": "210"
+    },
+    {
+        "id": 19,
+        "norden": "8",
+        "nproducto": "ICORE5 10 GENERACION",
+        "ncantidad": "2",
+        "nprecio": "200"
+    }
+]

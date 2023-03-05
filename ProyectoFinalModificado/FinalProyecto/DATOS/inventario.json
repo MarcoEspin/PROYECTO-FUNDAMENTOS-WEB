@@ -1,0 +1,58 @@
+[
+    {
+        "id": "3",
+        "nombreIn": "DISCO DURO DE 2TB",
+        "cantidadIn": 77,
+        "precioIn": "50",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": "4",
+        "nombreIn": "MAINBOARD G4 AMD\/INTEL",
+        "cantidadIn": "100",
+        "precioIn": "210",
+        "nomProveedorIn": "INTEL"
+    },
+    {
+        "id": "5",
+        "nombreIn": "MAINBOARD 5G",
+        "cantidadIn": 99,
+        "precioIn": "120",
+        "nomProveedorIn": "TECNOMEGA"
+    },
+    {
+        "id": "6",
+        "nombreIn": "DISCO DURO DE 2TB SSD",
+        "cantidadIn": "120",
+        "precioIn": "120.2",
+        "nomProveedorIn": "pppppppppp"
+    },
+    {
+        "id": "7",
+        "nombreIn": "ICORE5 10 GENERACION",
+        "cantidadIn": 9,
+        "precioIn": "200",
+        "nomProveedorIn": "Pavel Ch\u00e1vez"
+    },
+    {
+        "id": 8,
+        "nombreIn": "RAM 8GB",
+        "cantidadIn": 11,
+        "precioIn": "50",
+        "nomProveedorIn": "Alexander Torres"
+    },
+    {
+        "id": 9,
+        "nombreIn": "CASE GAMER",
+        "cantidadIn": "20",
+        "precioIn": "40",
+        "nomProveedorIn": "TECHNOMEGA"
+    },
+    {
+        "id": 10,
+        "nombreIn": "TARGATA GRAFICA RTX 3060 12GB 15 Gbps",
+        "cantidadIn": 4,
+        "precioIn": "378.56",
+        "nomProveedorIn": "Edison Valladares"
+    }
+]

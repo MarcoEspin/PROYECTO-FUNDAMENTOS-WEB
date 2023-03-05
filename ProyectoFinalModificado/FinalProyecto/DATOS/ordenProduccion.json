@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "fecha": "2023-03-03",
+        "ncliente": "Marlon Torres"
+    },
+    {
+        "id": "2",
+        "ncliente": "Marco Espin",
+        "fecha": "2023-03-04"
+    }
+]

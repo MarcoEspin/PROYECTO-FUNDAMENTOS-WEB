@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "ncliente": "Marlon Torres",
+        "telefonoc": "0998000396",
+        "correoc": "mptorres4@miweb.com",
+        "direccionc": "Juan Montalvo"
+    },
+    {
+        "id": 2,
+        "ncliente": "Marco Espin",
+        "telefonoc": "0999025972",
+        "correoc": "mespin@espe.edu.ec",
+        "direccionc": "Quito"
+    },
+    {
+        "id": 5,
+        "ncliente": "Brigithy",
+        "telefonoc": "0998235623",
+        "correoc": "brigithy_chavez@hotmail.com",
+        "direccionc": "Conocoto jm y lp"
+    }
+]

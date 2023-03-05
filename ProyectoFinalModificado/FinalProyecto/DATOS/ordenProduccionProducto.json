@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "norden": "2",
+        "nproducto": "PC GAMMER 1",
+        "ncantidad": "1",
+        "nprecio": null
+    },
+    {
+        "id": 2,
+        "norden": "2",
+        "nproducto": "PC GAMMER 1",
+        "ncantidad": "2",
+        "nprecio": null
+    },
+    {
+        "id": 3,
+        "norden": "2",
+        "nproducto": "WORKSTAION DEVELOPER",
+        "ncantidad": "2",
+        "nprecio": null
+    },
+    {
+        "id": 4,
+        "norden": "2",
+        "nproducto": "WORKSTAION DEVELOPER",
+        "ncantidad": "1",
+        "nprecio": null
+    }
+]
